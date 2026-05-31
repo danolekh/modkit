@@ -51,6 +51,16 @@
   color: var(--fg);
 }
 
+/*
+ * The .item wrapper has `overflow: hidden`, which clips the global outlined focus ring
+ * (drawn outside the element with a +2px offset). Draw the ring INSIDE the full-bleed
+ * button instead so the keyboard focus state stays visible.
+ */
+.headerButton:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: -2px;
+}
+
 .headerButton:hover {
   background: var(--surface);
 }
