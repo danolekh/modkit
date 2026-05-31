@@ -7,3 +7,4 @@ stats.html
 .vercel
 coverage
 *.log
+.claude
