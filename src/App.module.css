@@ -1,0 +1,45 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.siteHeader {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.bar {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: var(--space-3) var(--space-6);
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+}
+
+.brand {
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--fg);
+}
+
+.kicker {
+  font-size: var(--fs-1);
+  color: var(--fg-muted);
+}
+
+.siteFooter {
+  margin-top: auto;
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--fg-muted);
+  font-size: var(--fs-1);
+}
+
+.siteFooter .bar {
+  justify-content: space-between;
+}

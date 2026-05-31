@@ -1,0 +1,57 @@
+[
+  {
+    "name": "eyebrow",
+    "label": "Eyebrow",
+    "type": "text",
+    "required": false,
+    "default": ""
+  },
+  {
+    "name": "heading",
+    "label": "Heading",
+    "type": "text",
+    "required": true,
+    "default": "Heading"
+  },
+  {
+    "name": "subcopy",
+    "label": "Subcopy",
+    "type": "richtext",
+    "required": false,
+    "default": ""
+  },
+  {
+    "name": "primary_cta",
+    "label": "Primary CTA",
+    "type": "link",
+    "required": true,
+    "supported_types": ["EXTERNAL", "CONTENT", "EMAIL_ADDRESS"],
+    "default": {
+      "url": { "href": "#", "type": "EXTERNAL" },
+      "open_in_new_tab": false
+    }
+  },
+  {
+    "name": "secondary_cta",
+    "label": "Secondary CTA",
+    "type": "link",
+    "required": false,
+    "supported_types": ["EXTERNAL", "CONTENT", "EMAIL_ADDRESS"],
+    "default": {
+      "url": { "href": "#", "type": "EXTERNAL" },
+      "open_in_new_tab": false
+    }
+  },
+  {
+    "name": "variant",
+    "label": "Variant",
+    "type": "choice",
+    "required": true,
+    "display": "select",
+    "choices": [
+      ["default", "Default (left-aligned)"],
+      ["centered", "Centered"]
+    ],
+    "default": "default"
+  }
+]

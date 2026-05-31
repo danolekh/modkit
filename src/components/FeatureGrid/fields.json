@@ -1,0 +1,60 @@
+[
+  {
+    "name": "heading",
+    "label": "Heading",
+    "type": "text",
+    "required": false,
+    "default": "Why ModKit"
+  },
+  {
+    "name": "columns",
+    "label": "Columns",
+    "type": "choice",
+    "required": true,
+    "display": "select",
+    "choices": [
+      ["2", "2 columns"],
+      ["3", "3 columns"],
+      ["4", "4 columns"]
+    ],
+    "default": "3"
+  },
+  {
+    "name": "items",
+    "label": "Features",
+    "type": "group",
+    "occurrence": { "min": 0, "max": null, "default": 3 },
+    "children": [
+      {
+        "name": "icon",
+        "label": "Icon",
+        "type": "choice",
+        "required": true,
+        "display": "select",
+        "choices": [
+          ["bolt", "Bolt"],
+          ["shield", "Shield"],
+          ["spark", "Spark"],
+          ["layers", "Layers"],
+          ["gauge", "Gauge"],
+          ["plug", "Plug"]
+        ],
+        "default": "spark"
+      },
+      {
+        "name": "title",
+        "label": "Title",
+        "type": "text",
+        "required": true,
+        "default": ""
+      },
+      {
+        "name": "body",
+        "label": "Body",
+        "type": "richtext",
+        "required": false,
+        "default": ""
+      }
+    ]
+  }
+]

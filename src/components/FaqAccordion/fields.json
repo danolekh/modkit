@@ -1,0 +1,31 @@
+[
+  {
+    "name": "heading",
+    "label": "Heading",
+    "type": "text",
+    "required": false,
+    "default": "Frequently asked questions"
+  },
+  {
+    "name": "items",
+    "label": "Questions",
+    "type": "group",
+    "occurrence": { "min": 0, "max": null, "default": 3 },
+    "children": [
+      {
+        "name": "question",
+        "label": "Question",
+        "type": "text",
+        "required": true,
+        "default": ""
+      },
+      {
+        "name": "answer",
+        "label": "Answer",
+        "type": "richtext",
+        "required": true,
+        "default": ""
+      }
+    ]
+  }
+]
