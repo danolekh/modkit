@@ -1,0 +1,7 @@
+[
+  {
+    "name": "Total app JS (gzip)",
+    "path": "dist/assets/*.js",
+    "limit": "150 KB"
+  }
+]
