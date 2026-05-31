@@ -1,4 +1,4 @@
-import { defineConfig } from 'vitest/config'
+import { defineConfig, type PluginOption } from 'vitest/config'
 import react from '@vitejs/plugin-react'
 import { visualizer } from 'rollup-plugin-visualizer'
 
@@ -7,7 +7,9 @@ export default defineConfig({
   plugins: [
     react(),
     // Dev-only bundle report; `stats.html` is gitignored. Open it after `npm run build`.
-    visualizer({ filename: 'stats.html', gzipSize: true, brotliSize: true }),
+    // Cast: rollup-plugin-visualizer returns a rollup Plugin whose type doesn't line up with
+    // vite's Plugin under exactOptionalPropertyTypes; it is a valid Vite plugin at runtime.
+    visualizer({ filename: 'stats.html', gzipSize: true, brotliSize: true }) as PluginOption,
   ],
   build: {
     target: 'es2022',

@@ -10,8 +10,8 @@ exactly as a HubSpot module reads its fields at render time.
 - **Stack:** Vite 6 · React 18 · TypeScript (`strict` + `noUncheckedIndexedAccess` +
   `exactOptionalPropertyTypes`) · CSS Modules.
 - **Runtime dependencies:** `clsx` only. No UI library, no headless primitive library, no CSS-in-JS.
-- **Bundle:** **51.55 KB** gzipped JS against a **150 KB** budget; `ResourceList` is code-split and
-  lazy-loaded on scroll.
+- **Bundle:** **44.99 KB** gzipped JS (size-limit) against a **150 KB** budget; `ResourceList` is
+  code-split and lazy-loaded on scroll.
 
 ---
 
@@ -88,13 +88,20 @@ scrolls into view (`src/hooks/useInView.ts`, IntersectionObserver). `npm run siz
 gzip budget via `size-limit`; `rollup-plugin-visualizer` writes a `stats.html` bundle report on build.
 
 ```
+# vite build reporter
 dist/assets/index-*.js          155.88 kB │ gzip: 51.14 kB   (React + app)
 dist/assets/ResourceList-*.js     0.83 kB │ gzip:  0.43 kB   (lazy module)
 dist/assets/index-*.css           7.21 kB │ gzip:  2.03 kB
 
-size-limit → Total app JS (gzip): 51.55 KB  /  Size limit: 150 KB   ✔
-            Loading time: 1.1 s on slow 3G
+# npm run size
+Total app JS (gzip)
+Size limit:   150 KB
+Size:         44.99 KB with all dependencies, compressed and minified
+Loading time: 879 ms on slow 3G            ✔ passed
 ```
+
+(The two gzip figures differ because size-limit and Vite's reporter compress/measure slightly
+differently; both are far under the 150 KB budget.)
 
 ---
 
