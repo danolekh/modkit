@@ -48,8 +48,6 @@
     font-size: var(--fs-3);
     font-weight: 600;
     color: var(--fg);
-    /* Match the wrapper's radius so the inset focus ring (below) curves with it. */
-    border-radius: var(--radius);
 }
 
 /*
