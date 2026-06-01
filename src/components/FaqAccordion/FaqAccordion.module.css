@@ -49,12 +49,15 @@
   font-size: var(--fs-3);
   font-weight: 600;
   color: var(--fg);
+  /* Match the wrapper's radius so the inset focus ring (below) curves with it. */
+  border-radius: var(--radius);
 }
 
 /*
- * The .item wrapper has `overflow: hidden`, which clips the global outlined focus ring
- * (drawn outside the element with a +2px offset). Draw the ring INSIDE the full-bleed
- * button instead so the keyboard focus state stays visible.
+ * The .item wrapper has `overflow: hidden` (rounded corners), which clips the global
+ * outlined focus ring (drawn outside the element with a +2px offset). Draw the ring INSIDE
+ * the full-bleed button instead, and round it to match the wrapper so its corners aren't
+ * clipped by the rounded overflow.
  */
 .headerButton:focus-visible {
   outline: 2px solid var(--ring);
